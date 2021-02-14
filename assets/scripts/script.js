@@ -6,10 +6,23 @@ const lowerLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'
 const upperLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 const specials = ['', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~', ']'];
 
-let randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-let randomLowerLetter = lowerLetters[Math.floor(Math.random() * lowerLetters.length)];
-let randomUpperLetter = upperLetters[Math.floor(Math.random() * upperLetters.length)];
-let randomSpecials = specials[Math.floor(Math.random() * specials.length)];
+const randomNumber = () => {
+  return numbers[Math.floor(Math.random() * numbers.length)];
+};
+
+const randomLowerLetter = () => {
+  return lowerLetters[Math.floor(Math.random() * lowerLetters.length)];
+} 
+
+const randomUpperLetter = () => {
+  return upperLetters[Math.floor(Math.random() * upperLetters.length)];
+
+}
+const randomSpecials = () => {
+  return specials[Math.floor(Math.random() * specials.length)];
+}
+
+let passwordLength = 10;
 
 
 
