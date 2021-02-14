@@ -8,9 +8,13 @@ const specials = ['', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',
 
 let randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
 let randomLowerLetter = lowerLetters[Math.floor(Math.random() * lowerLetters.length)];
+let randomUpperLetter = upperLetters[Math.floor(Math.random() * upperLetters.length)];
+let randomSpecials = specials[Math.floor(Math.random() * specials.length)];
+
+
 
 const generatePassword = () => {
-  return (randomNumber && randomLowerLetter);
+  return randomSpecials;
 }
 
 
