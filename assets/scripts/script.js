@@ -47,10 +47,10 @@ const promptSpecialsCriteria = () => {
 
 const promptPasswordLength = () => {
   let promptLength = prompt('How long should your password be?\nYour password must be between 8 and 128 characters.');
-  
+  passwordLength = parseInt(promptLength, 10);
   if ((promptLength >= 8) && (promptLength <= 128)) {
-    passwordLength = parseInt(promptLength, 10);
-    alert('Good Length!');
+    
+    alert('That length is valid!');
   } else {
     promptPasswordLength();
   }
