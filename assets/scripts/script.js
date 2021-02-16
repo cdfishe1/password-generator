@@ -17,28 +17,28 @@ let passwordLength;
 
 const intro = alert('Welcome to the Password Genterator!\nYou must choose from at least one of these criteria:\nlowercase letter(a,b,d)\nUpper Case Letters(A,B,C)\nNumbers(0-9)\nSpecial characters(like #$%)\nYou must choose at least one criteria\n\nPress ok to continue');
 
-const lowerCriteria = () => {
-  let promptLowerLetters = prompt('Would you like to include lower-case letters (such as a,b,c)?\nPress OK if Yes or press Cancel if no');
-  if (promptLowerLetters === '') {
+const promptLowerCriteria = () => {
+  let promptLower = prompt('Would you like to include lower-case letters (such as a,b,c)?\nPress OK if Yes or press Cancel if no');
+  if (promptLower === '') {
     userChoices.push(lowerLetters);
   } 
 };
 
-const upperCriteria = () => {
-  let promptUpperLetters = prompt('Would you like to include upper-case letters (such as A,B,C)?\nPress OK if Yes or press Cancel if no');
-  if (promptUpperLetters === '') {
+const promptUpperCriteria = () => {
+  let promptUpper = prompt('Would you like to include upper-case letters (such as A,B,C)?\nPress OK if Yes or press Cancel if no');
+  if (promptUpper === '') {
     userChoices.push(upperLetters);
   } 
 };
 
-const numbersCriteria = () => {
+const promptNumbersCriteria = () => {
   let promptNumbers = prompt('Would you like to include lower-case letters (such as 0,1,2)?\nPress OK if Yes or press Cancel if no');
   if (promptNumbers === '') {
     userChoices.push(numbers);
   } 
 };
 
-const specialsCriteria = () => {
+const promptSpecialsCriteria = () => {
   let promptSpecials = prompt('Would you like to include lower-case letters (such as #,$,%)?\nPress OK if Yes or press Cancel if no');
   if (promptSpecials === '') {
     userChoices.push(specials);
@@ -56,10 +56,10 @@ const promptPasswordLength = () => {
   }
 };
 
-lowerCriteria();
-upperCriteria();
-numbersCriteria();
-specialsCriteria();
+promptLowerCriteria();
+promptUpperCriteria();
+promptNumbersCriteria();
+promptSpecialsCriteria();
 promptPasswordLength();
 
 
