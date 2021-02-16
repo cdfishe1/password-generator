@@ -10,41 +10,36 @@ const specials = ['!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '
 // The array of criteria the user chooses for the password
 let userChoices = [];
 
+// Sets global passwordLength variable
+let passwordLength;
+
 //*** Begin Password Generation ***/
 
 const intro = alert('Welcome to the Password Genterator!\nYou must choose from at least one of these criteria:\nlowercase letter(a,b,d)\nUpper Case Letters(A,B,C)\nNumbers(0-9)\nSpecial characters(like #$%)\nYou must choose at least one criteria\n\nPress ok to continue');
 
-let promptLowerLetters = prompt('Would you like to include lower-case letters (such as a,b,c)?\nPress OK if Yes or press Cancel if no');
-let promptUpperLetters = prompt('Would you like to include upper-case letters (such as A,B,C)?\nPress OK if Yes or press Cancel if no');
-let promptNumbers = prompt('Would you like to include lower-case letters (such as 0,1,2)?\nPress OK if Yes or press Cancel if no');
-let promptSpecials = prompt('Would you like to include lower-case letters (such as #,$,%)?\nPress OK if Yes or press Cancel if no');
-
-
-
-// let promptPasswordLength = prompt('How long should your password be?\nYour password must be between 8 and 128 characters.');
-
-// Sets global passwordLength variable
-let passwordLength;
-
 const lowerCriteria = () => {
+  let promptLowerLetters = prompt('Would you like to include lower-case letters (such as a,b,c)?\nPress OK if Yes or press Cancel if no');
   if (promptLowerLetters === '') {
     userChoices.push(lowerLetters);
   } 
 };
 
 const upperCriteria = () => {
+  let promptUpperLetters = prompt('Would you like to include upper-case letters (such as A,B,C)?\nPress OK if Yes or press Cancel if no');
   if (promptUpperLetters === '') {
     userChoices.push(upperLetters);
   } 
 };
 
 const numbersCriteria = () => {
+  let promptNumbers = prompt('Would you like to include lower-case letters (such as 0,1,2)?\nPress OK if Yes or press Cancel if no');
   if (promptNumbers === '') {
     userChoices.push(numbers);
   } 
 };
 
 const specialsCriteria = () => {
+  let promptSpecials = prompt('Would you like to include lower-case letters (such as #,$,%)?\nPress OK if Yes or press Cancel if no');
   if (promptSpecials === '') {
     userChoices.push(specials);
   } 
