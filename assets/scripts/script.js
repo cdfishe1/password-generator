@@ -7,39 +7,48 @@ const specials = ['!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '
 // The array of criteria the user chooses for the password
 let userChoices = [];
 
-
-// let passwordLength;
-
 //*** Begin Password Generation ***/
 const intro = alert('Welcome to the Password Genterator!\nYou can choose from these criteria:\nlowercase letter(a,b,d)\nUpper Case Letters(A,B,C)\nNumbers(0-9)\nSpecial characters(like #$%)\nYou must choose at least one criteria\n\nPress ok to continue');
 
-const promptLowerLetters = prompt('Would you like to include lower-case letters (such as a,b,c)?\nPress OK if Yes or press Cancel if no');
-
-const lowerCriteria = () => {
-    if (promptLowerLetters) {
-      userChoices.push(lowerLetters);
-      passwordCriteria();
-    } else {
-      passwordCriteria();
-    }
-};
-
-// console.log(userChoices);
-
+let promptLowerLetters = prompt('Would you like to include lower-case letters (such as a,b,c)?\nPress OK if Yes or press Cancel if no');
+let promptUpperLetters = prompt('Would you like to include upper-case letters (such as A,B,C)?\nPress OK if Yes or press Cancel if no');
+let promptNumbers = prompt('Would you like to include lower-case letters (such as 0,1,2)?\nPress OK if Yes or press Cancel if no');
+let promptSpecials = prompt('Would you like to include lower-case letters (such as #,$,%)?\nPress OK if Yes or press Cancel if no');
 let promptPasswordLength = prompt('How long would like your password to be?\nYour password must be between 8 and 128 characters.');
 
-// Sets the user input for password length
+// Converts the passwordLength from a string to a number
 let passwordLength = parseInt(promptPasswordLength, 10);
 
-const passwordCriteria = () => {
-    if (passwordLength >= 8 || passwordLength <= 128) {
-      finalMessage();
-    }
-}
-
-const finalMessage = () => {
-  alert('Great! We have all your criteria. Press the Generate Password button below.')
+const lowerCriteria = () => {
+  if (promptLowerLetters === '') {
+    userChoices.push(lowerLetters);
+  } 
 };
+
+const upperCriteria = () => {
+  if (promptUpperLetters === '') {
+    userChoices.push(upperLetters);
+  } 
+};
+
+const numbersCriteria = () => {
+  if (promptNumbers === '') {
+    userChoices.push(numbers);
+  } 
+};
+
+const specialsCriteria = () => {
+  if (promptSpecials === '') {
+    userChoices.push(specials);
+  } 
+};
+
+lowerCriteria();
+upperCriteria();
+numbersCriteria();
+specialsCriteria();
+
+const finalMessage = alert('Great! We have all your criteria. Press the Generate Password button below.');
 
 
 // The button that initiates the password generator
@@ -48,18 +57,19 @@ const generateBtn = document.querySelector("#generate");
 
 // The function that will randomly select a member of the userChoices array
 const randomUserChoices = () => {
-  return userChoices[Math.floor(Math.random() * userChoices.length)]
+  let mergedChoices = userChoices.flat(1);
+  return mergedChoices[Math.floor(Math.random() * mergedChoices.length)]
 };
+
 
 // The function that generates the password
 const generatePassword = () => {
-  // The array that will receive the newly created password
   let newPassword = [];
-  // Loops through the user determined array of choices based on passwordLength and pushes these to the newPassword array
+
   for (i = 0; i < passwordLength; i++) {
     newPassword.push(randomUserChoices());
   }
-  // Removes the commas from the newPassword array
+
   return newPassword.join('');
 };
 
