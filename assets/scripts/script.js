@@ -8,6 +8,10 @@ const criteria = {
   specials: ['!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~', ']'],
   userChoices: [],
   passwordLength: null,
+  lowerChoice: null,
+  upperChoice: null,
+  numbersChoice: null,
+  specialsChoice: null,
 
 };
 
@@ -17,6 +21,7 @@ const intro = alert('Welcome to the Password Genterator!\nYou must choose from a
 
 const promptLowerCriteria = () => {
   let promptLower = prompt('Would you like to include lower-case letters (such as a,b,c)?\nPress OK if Yes or press Cancel if no');
+  criteria.lowerChoice = promptLower;
   if (promptLower === '') {
     criteria.userChoices.push(criteria.lowerLetters);
   } 
@@ -24,6 +29,7 @@ const promptLowerCriteria = () => {
 
 const promptUpperCriteria = () => {
   let promptUpper = prompt('Would you like to include upper-case letters (such as A,B,C)?\nPress OK if Yes or press Cancel if no');
+  criteria.upperChoice = promptUpper;
   if (promptUpper === '') {
     criteria.userChoices.push(criteria.upperLetters);
   } 
@@ -31,6 +37,7 @@ const promptUpperCriteria = () => {
 
 const promptNumbersCriteria = () => {
   let promptNumbers = prompt('Would you like to include lower-case letters (such as 0,1,2)?\nPress OK if Yes or press Cancel if no');
+  numbersChoice = promptNumbers;
   if (promptNumbers === '') {
     criteria.userChoices.push(criteria.numbers);
   } 
@@ -38,9 +45,26 @@ const promptNumbersCriteria = () => {
 
 const promptSpecialsCriteria = () => {
   let promptSpecials = prompt('Would you like to include lower-case letters (such as #,$,%)?\nPress OK if Yes or press Cancel if no');
+  specialsChoice = promptSpecials;
   if (promptSpecials === '') {
     criteria.userChoices.push(criteria.specials);
   } 
+};
+
+const promptCriteria = () => {
+  promptLowerCriteria();
+  promptUpperCriteria();
+  promptNumbersCriteria();
+  promptSpecialsCriteria();
+};
+
+const validateCriteria = () => {
+  if ((criteria.lowerChoice === null) && (criteria.upperChoice === null) && (criteria.numbersChoice === null) && (criteria.specialsChoice === null)) {
+    alert('You must pick at least one criteria');
+    promptCriteria();
+  } else {
+    alert('Great! You have picked at least one criteria.');
+  }
 };
 
 const promptPasswordLength = () => {
@@ -51,17 +75,14 @@ const promptPasswordLength = () => {
     
     alert('That length is valid!');
   } else {
+    alert('Your password must be between 8 and 128 characters.')
     promptPasswordLength();
   }
 };
 
-promptLowerCriteria();
-promptUpperCriteria();
-promptNumbersCriteria();
-promptSpecialsCriteria();
+promptCriteria();
+validateCriteria();
 promptPasswordLength();
-
-
 
 
 const finalMessage = alert('Great! We have all your criteria. Press the Generate Password button below.');
