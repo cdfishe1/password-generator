@@ -1,3 +1,4 @@
+/* Resets the styling for the page */
 *,
 *::before,
 *::after {
@@ -30,6 +31,7 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+/* The overall card */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -50,10 +52,12 @@ header {
   height: 2px;
 }
 
+/* Text area with generated password */
 .card-body {
   min-height: 100px;
 }
 
+/* Button placement */
 .card-footer {
   text-align: center;
 }
@@ -72,6 +76,7 @@ header {
   clear: both;
 }
 
+/* Button styling */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -97,6 +102,7 @@ button[disabled] {
   float: right;
 }
 
+/* Password appearance */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
