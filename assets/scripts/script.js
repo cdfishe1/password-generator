@@ -1,6 +1,7 @@
 // The button that initiates the password generator
 const generateBtn = document.querySelector("#generate");
 
+
 //Contains the arrays and variables needed to run the password generator
 const criteria = {
   numbers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
@@ -56,7 +57,7 @@ const promptSpecialsCriteria = () => {
 
 //Executes the inital alert and criteria prompts
 const promptCriteria = () => {
-  const intro = alert('Welcome to the Password Genterator!\nYou must choose from at least one of these criteria:\nlowercase letter(a,b,d)\nUpper Case Letters(A,B,C)\nNumbers(0-9)\nSpecial characters(like #$%)\nYou must choose at least one criteria\n\nPress ok to continue');
+  alert('Welcome to the Password Genterator!\nYou must choose from at least one of these criteria:\nlowercase letter(a,b,d)\nUpper Case Letters(A,B,C)\nNumbers(0-9)\nSpecial characters(like #$%)\nYou must choose at least one criteria\n\nPress ok to continue');
   promptLowerCriteria();
   promptUpperCriteria();
   promptNumbersCriteria();
@@ -81,12 +82,13 @@ const promptPasswordLength = () => {
   if ((promptLength >= 8) && (promptLength <= 128)) {
     
     alert('That length is valid!');
-    const finalMessage = alert('Great! We have all your criteria. Press the Generate Password button below.');
+    alert('Great! We have all your criteria. Press the Generate Password button below.');
   } else {
     alert('Your password must be between 8 and 128 characters.')
     promptPasswordLength();
   }
 };
+
 
 //Executes all the primary functions of the prompt script
 promptCriteria();
