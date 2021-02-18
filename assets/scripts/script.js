@@ -66,10 +66,6 @@ const promptCriteria = () => {
 
 //Evaluates whether the user has clicked cancel on all criteria, forcing a re-execution of the promptCriteria() function.
 const validateCriteria = () => {
-  console.log(criteria.numbersChoice);
-  console.log(criteria.lowerChoice);
-  console.log(criteria.upperChoice);
-  console.log(criteria.specialsChoice);
   if ((criteria.lowerChoice === false) && (criteria.upperChoice === false) && (criteria.numbersChoice === false) && (criteria.specialsChoice === false)) {
     alert('You must pick at least one criteria');
     promptCriteria();
