@@ -39,7 +39,7 @@ generateBtn.addEventListener("click", useButton);
 
 //Executes the inital alert and lowerCriteria
 const beginPromptCriteria = () => {
-  alert('Welcome to the Password Genterator!\nYou must choose from at least one of these criteria:\nlowercase letter(a,b,d)\nUpper Case Letters(A,B,C)\nNumbers(0-9)\nSpecial characters(like #$%)\nYou must choose at least one criteria\n\nPress ok to continue');
+  alert('Welcome to the Password Generator!\nYou must choose from at least one of these criteria:\nlowercase letter(a,b,d)\nUpper Case Letters(A,B,C)\nNumbers(0-9)\nSpecial characters like(#$%)\n\nPress ok to continue');
   promptLowerCriteria();
 
 };
@@ -54,7 +54,7 @@ const promptLowerCriteria = () => {
   promptUpperCriteria();
 };
 
-//Pushes upperLetters array to userChoices array on ok then executes Numbers criteria
+//Pushes upperLetters array to userChoices array on ok then executes numbersCriteria
 const promptUpperCriteria = () => {
   let promptUpper = confirm('Would you like to include upper-case letters (such as A,B,C)?\nPress OK if Yes or press Cancel if no');
   criteria.upperChoice = promptUpper;
@@ -64,7 +64,7 @@ const promptUpperCriteria = () => {
   promptNumbersCriteria();
 };
 
-//Pushes numbers array to userChoices array on ok then executes specials criteria
+//Pushes numbers array to userChoices array on ok then executes specialsCriteria
 const promptNumbersCriteria = () => {
   let promptNumbers = confirm('Would you like to include numbers (such as 0,1,2)?\nPress OK if Yes or press Cancel if no');
   criteria.numbersChoice = promptNumbers;
@@ -128,7 +128,3 @@ const generatePassword = () => {
 
   return newPassword.join('');
 };
-
-
-
-
