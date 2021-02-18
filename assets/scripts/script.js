@@ -40,7 +40,7 @@ const promptUpperCriteria = () => {
 //Pushes numbers array to userChoices array on ok.
 const promptNumbersCriteria = () => {
   let promptNumbers = confirm('Would you like to include numbers (such as 0,1,2)?\nPress OK if Yes or press Cancel if no');
-  numbersChoice = promptNumbers;
+  criteria.numbersChoice = promptNumbers;
   if (promptNumbers) {
     criteria.userChoices.push(criteria.numbers);
   } 
@@ -49,7 +49,7 @@ const promptNumbersCriteria = () => {
 //Pushes specials array to userChoices array on ok.
 const promptSpecialsCriteria = () => {
   let promptSpecials = confirm('Would you like to include special characters (such as #,$,%)?\nPress OK if Yes or press Cancel if no');
-  specialsChoice = promptSpecials;
+  criteria.specialsChoice = promptSpecials;
   if (promptSpecials) {
     criteria.userChoices.push(criteria.specials);
   } 
@@ -66,7 +66,11 @@ const promptCriteria = () => {
 
 //Evaluates whether the user has clicked cancel on all criteria, forcing a re-execution of the promptCriteria() function.
 const validateCriteria = () => {
-  if ((criteria.lowerChoice === null) && (criteria.upperChoice === null) && (criteria.numbersChoice === null) && (criteria.specialsChoice === null)) {
+  console.log(criteria.numbersChoice);
+  console.log(criteria.lowerChoice);
+  console.log(criteria.upperChoice);
+  console.log(criteria.specialsChoice);
+  if ((criteria.lowerChoice === false) && (criteria.upperChoice === false) && (criteria.numbersChoice === false) && (criteria.specialsChoice === false)) {
     alert('You must pick at least one criteria');
     promptCriteria();
   } else {
