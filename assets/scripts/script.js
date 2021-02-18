@@ -21,36 +21,36 @@ const criteria = {
 
 //Pushes lowerLetters array to userChoices array on ok.
 const promptLowerCriteria = () => {
-  let promptLower = prompt('Would you like to include lower-case letters (such as a,b,c)?\nPress OK if Yes or press Cancel if no');
+  let promptLower = confirm('Would you like to include lower-case letters (such as a,b,c)?\nPress OK if Yes or press Cancel if no');
   criteria.lowerChoice = promptLower;
-  if (promptLower === '') {
+  if (promptLower) {
     criteria.userChoices.push(criteria.lowerLetters);
   } 
 };
 
 //Pushes upperLetters array to userChoices array on ok.
 const promptUpperCriteria = () => {
-  let promptUpper = prompt('Would you like to include upper-case letters (such as A,B,C)?\nPress OK if Yes or press Cancel if no');
+  let promptUpper = confirm('Would you like to include upper-case letters (such as A,B,C)?\nPress OK if Yes or press Cancel if no');
   criteria.upperChoice = promptUpper;
-  if (promptUpper === '') {
+  if (promptUpper) {
     criteria.userChoices.push(criteria.upperLetters);
   } 
 };
 
 //Pushes numbers array to userChoices array on ok.
 const promptNumbersCriteria = () => {
-  let promptNumbers = prompt('Would you like to include numbers (such as 0,1,2)?\nPress OK if Yes or press Cancel if no');
+  let promptNumbers = confirm('Would you like to include numbers (such as 0,1,2)?\nPress OK if Yes or press Cancel if no');
   numbersChoice = promptNumbers;
-  if (promptNumbers === '') {
+  if (promptNumbers) {
     criteria.userChoices.push(criteria.numbers);
   } 
 };
 
 //Pushes specials array to userChoices array on ok.
 const promptSpecialsCriteria = () => {
-  let promptSpecials = prompt('Would you like to include special characters (such as #,$,%)?\nPress OK if Yes or press Cancel if no');
+  let promptSpecials = confirm('Would you like to include special characters (such as #,$,%)?\nPress OK if Yes or press Cancel if no');
   specialsChoice = promptSpecials;
-  if (promptSpecials === '') {
+  if (promptSpecials) {
     criteria.userChoices.push(criteria.specials);
   } 
 };
