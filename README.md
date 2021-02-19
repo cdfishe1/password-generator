@@ -36,6 +36,7 @@ Site deployed at [Charles Fisher](https://cdfishe1.github.io/password-generator/
 
 * Used ES6 features such as const and let for variable declaration and arrow functions to enhance readability of the script.
 * Constructed script so that no variables or arrays are left in the global scope.
+* Refactored html and css to reflect semantic elements.
 
 
 ## Installation
@@ -60,7 +61,7 @@ Generates 0 errors on load or through execution.
 
 ## Credits
 
-* David Metcalfe, bootcamp tutor, for helping me to understand how to make the password button execute two different functions as well as overall function execution.
+* David Metcalfe, bootcamp tutor, for helping me to understand how to make the password button execute two different functions as well as chainging the functions more efficiently.
 
 ## License
 

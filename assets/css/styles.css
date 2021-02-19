@@ -32,7 +32,7 @@ header {
 }
 
 /* The overall card */
-.card {
+main {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
   border-width: 1px;
@@ -44,7 +44,7 @@ header {
   padding: 30px 40px;
 }
 
-.card-header::after {
+main h2::after {
   content: " ";
   display: block;
   width: 100%;
@@ -58,11 +58,11 @@ header {
 }
 
 /* Button placement */
-.card-footer {
+footer {
   text-align: center;
 }
 
-.card-footer::before {
+footer::before {
   content: " ";
   display: block;
   width: 100%;
@@ -70,7 +70,7 @@ header {
   height: 2px;
 }
 
-.card-footer::after {
+footer::after {
   content: " ";
   display: block;
   clear: both;

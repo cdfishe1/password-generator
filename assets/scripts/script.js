@@ -15,24 +15,29 @@ const criteria = {
 
 };
 
+const reset = {
+  resetBtn: document.createElement("button"),
+
+};
+
 // The button that initiates the password generator
 const generateBtn = document.querySelector("#generate");
 
 // Evaluates if the userChoices array is empty. If yes, will begin the password generation process. If false, will write the password to the textarea.
-const useButton = () => {
+const usePasswordButton = () => {
   if (!criteria.userChoices[0]) {
     beginPromptCriteria();
   } else {
     let password = generatePassword();
     let passwordText = document.querySelector("#password");
-  
     passwordText.value = password;
+    
   }
   
 };
 
 // Button listens for a click to begin either the password criteria process or password display
-generateBtn.addEventListener("click", useButton);
+generateBtn.addEventListener("click", usePasswordButton);
 
 
 //*** Begin Password Generation ***/
@@ -98,6 +103,7 @@ const validateCriteria = () => {
 //Executes the prompt for asking for password length, evaluates if it is valid, and returns the user back to the function if the length is not valid.
 const promptPasswordLength = () => {
   let promptLength = prompt('How long should your password be?\nYour password must be between 8 and 128 characters.');
+  //Turns the string declared from promptLength into an interger
   criteria.passwordLength = parseInt(promptLength, 10);
 
   if ((promptLength >= 8) && (promptLength <= 128)) {
@@ -113,6 +119,7 @@ const promptPasswordLength = () => {
 
 // Randomly selects a member of the userChoices array
 const randomUserChoices = () => {
+  //Turns the criteria pushed into userChoices into one array.
   let mergedChoices = criteria.userChoices.flat(1);
   return mergedChoices[Math.floor(Math.random() * mergedChoices.length)]
 };
