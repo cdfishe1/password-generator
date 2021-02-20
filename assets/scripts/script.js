@@ -2,9 +2,9 @@
 
 //Contains the arrays and variables needed to run the password generator
 const criteria = {
-  numbers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
-  lowerLetters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
-  upperLetters: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
+  numbers: '1234567890'.split(''),
+  lowerLetters: 'abcdefghijklmnopqrstuvwxyz0123456789 '.split(''),
+  upperLetters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
   specials: ['!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'],
   userChoices: [],
   passwordLength: null,
@@ -15,10 +15,10 @@ const criteria = {
 
 };
 
-const resetBtn = document.querySelector('#reset');
-
-// The button that initiates the password generator
-const generateBtn = document.querySelector("#generate");
+const buttons = {
+  generateBtn: document.querySelector("#generate"),
+  resetBtn: document.querySelector('#reset'),
+};
 
 // Evaluates if the userChoices array is empty. If yes, will begin the password generation process. If false, will write the password to the textarea.
 const usePasswordButton = () => {
@@ -28,13 +28,22 @@ const usePasswordButton = () => {
     let password = generatePassword();
     let passwordText = document.querySelector("#password");
     passwordText.value = password;
-    resetBtn.style.display = 'initial';
+    buttons.resetBtn.style.display = 'initial';
+    
   }
   
 };
 
+const useResetButton = () => {
+  criteria.userChoices = [];
+  let passwordText = document.querySelector("#password");
+  passwordText.value = '';
+  buttons.resetBtn.style.display = 'none';
+};
+
 // Button listens for a click to begin either the password criteria process or password display
-generateBtn.addEventListener("click", usePasswordButton);
+buttons.generateBtn.addEventListener("click", usePasswordButton);
+buttons.resetBtn.addEventListener('click', useResetButton);
 
 
 //*** Begin Password Generation ***/
