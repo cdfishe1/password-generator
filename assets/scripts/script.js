@@ -1,6 +1,6 @@
 //Javascript written with ES6 features such as const, let, and arrow functions to improve readability
 
-//Contains the arrays and variables needed to run the password generator
+//Arrays and variables needed to run the password generator
 const criteria = {
   numbers: '1234567890'.split(''),
   lowerLetters: 'abcdefghijklmnopqrstuvwxyz0123456789 '.split(''),
@@ -15,12 +15,13 @@ const criteria = {
 
 };
 
+// Variables for the Generate and Reset buttons.
 const buttons = {
   generateBtn: document.querySelector("#generate"),
   resetBtn: document.querySelector('#reset'),
 };
 
-// Evaluates if the userChoices array is empty. If yes, will begin the password generation process. If false, will write the password to the textarea.
+// Evaluates if the userChoices array is empty. If yes, will begin the password generation process. If false, will write the password to the textarea and reveal the Reset Password button.
 const usePasswordButton = () => {
   if (!criteria.userChoices[0]) {
     beginPromptCriteria();
@@ -34,6 +35,7 @@ const usePasswordButton = () => {
   
 };
 
+// Resets userChoices to an empty array. Sets passwordText field to empty. Makes the button disappear.
 const useResetButton = () => {
   criteria.userChoices = [];
   let passwordText = document.querySelector("#password");
@@ -41,7 +43,7 @@ const useResetButton = () => {
   buttons.resetBtn.style.display = 'none';
 };
 
-// Button listens for a click to begin either the password criteria process or password display
+// Listens for the Generate Password and Reset Generator buttons and excecutes their functions
 buttons.generateBtn.addEventListener("click", usePasswordButton);
 buttons.resetBtn.addEventListener('click', useResetButton);
 

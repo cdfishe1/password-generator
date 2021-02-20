@@ -57,7 +57,7 @@ main h2::after {
   min-height: 100px;
 }
 
-/* Button placement */
+/* Generate button placement */
 footer {
   text-align: center;
 }
@@ -76,8 +76,8 @@ footer::after {
   clear: both;
 }
 
-/* Button styling */
-.btn {
+/* Generate button styling */
+.generate-btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
@@ -102,6 +102,7 @@ button[disabled] {
   float: right;
 }
 
+/* Flexbox that contains the generate and reset buttons */
 .button-wrapper {
   display: flex;
   flex-flow: column wrap;
@@ -168,6 +169,4 @@ button[disabled] {
   main h2 {
     font-size: 1.25rem;
   }
-
-
 }
