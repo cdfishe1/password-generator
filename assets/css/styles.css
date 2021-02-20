@@ -117,7 +117,7 @@ button[disabled] {
   font-size: 1rem;
   font-weight: bold;
   padding: 1.25vh 1.25vw;
-  margin: 1vh 0;
+  /* margin: 1vh 0; */
   cursor: pointer;
 }
 
@@ -162,6 +162,7 @@ button[disabled] {
 
   .reset-btn {
     padding: 1.25vh 2vw;
+    margin: 1vh 0;
   }
 
   main h2 {
