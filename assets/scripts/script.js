@@ -15,10 +15,7 @@ const criteria = {
 
 };
 
-const reset = {
-  resetBtn: document.createElement("button"),
-
-};
+const resetBtn = document.querySelector('#reset');
 
 // The button that initiates the password generator
 const generateBtn = document.querySelector("#generate");
@@ -31,7 +28,7 @@ const usePasswordButton = () => {
     let password = generatePassword();
     let passwordText = document.querySelector("#password");
     passwordText.value = password;
-    
+    resetBtn.style.display = 'initial';
   }
   
 };

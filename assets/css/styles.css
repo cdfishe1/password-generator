@@ -102,6 +102,18 @@ button[disabled] {
   float: right;
 }
 
+.reset-button {
+  display: none;
+  border: none;
+  background-color: #00FF00;
+  border-radius: 25px;
+  color: hsl(360, 91%, 36%);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1.25vh 1.25vw;
+  cursor: pointer;
+}
+
 /* Password appearance */
 #password {
   -webkit-appearance: none;

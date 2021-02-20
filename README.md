@@ -37,6 +37,7 @@ Site deployed at [Charles Fisher](https://cdfishe1.github.io/password-generator/
 * Used ES6 features such as const and let for variable declaration and arrow functions to enhance readability of the script.
 * Constructed script so that no variables or arrays are left in the global scope.
 * Refactored html and css to reflect semantic elements.
+* Enlarged size of button on small screens for ease of use.
 
 
 ## Installation
