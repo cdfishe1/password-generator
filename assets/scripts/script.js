@@ -12,6 +12,7 @@ const criteria = {
   upperChoice: null,
   numbersChoice: null,
   specialsChoice: null,
+  passwordText: document.querySelector("#password"),
 
 };
 
@@ -27,8 +28,7 @@ const usePasswordButton = () => {
     beginPromptCriteria();
   } else {
     let password = generatePassword();
-    let passwordText = document.querySelector("#password");
-    passwordText.value = password;
+    criteria.passwordText.value = password;
     buttons.resetBtn.style.display = 'initial';
     
   }
@@ -38,8 +38,7 @@ const usePasswordButton = () => {
 // Resets userChoices to an empty array. Sets passwordText field to empty. Makes the button disappear.
 const useResetButton = () => {
   criteria.userChoices = [];
-  let passwordText = document.querySelector("#password");
-  passwordText.value = '';
+  criteria.passwordText.value = '';
   buttons.resetBtn.style.display = 'none';
 };
 
