@@ -5,7 +5,7 @@ const criteria = {
   numbers: '1234567890'.split(''),
   lowerLetters: 'abcdefghijklmnopqrstuvwxyz0123456789 '.split(''),
   upperLetters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
-  specials: ['!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'],
+  specials: '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~"'.split(''),
   userChoices: [],
   passwordLength: null,
   lowerChoice: null,
