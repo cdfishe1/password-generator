@@ -20,6 +20,7 @@ const criteria = {
 const buttons = {
   generateBtn: document.querySelector("#generate"),
   resetBtn: document.querySelector('#reset'),
+  copyBtn: document.querySelector('#copy'),
 };
 
 // Evaluates if the userChoices array is empty. If yes, will begin the password generation process. If false, will write the password to the textarea and reveal the Reset Password button.
@@ -30,6 +31,7 @@ const usePasswordButton = () => {
     let password = generatePassword();
     criteria.passwordText.value = password;
     buttons.resetBtn.style.display = 'initial';
+    buttons.copyBtn.style.display = 'initial';
     
   }
   
@@ -40,11 +42,18 @@ const useResetButton = () => {
   criteria.userChoices = [];
   criteria.passwordText.value = '';
   buttons.resetBtn.style.display = 'none';
+  buttons.copyBtn.style.display = 'none';
 };
+
+const useCopyButton = () => {
+  criteria.passwordText.select();
+  document.execCommand('copy');
+}
 
 // Listens for the Generate Password and Reset Generator buttons and excecutes their functions
 buttons.generateBtn.addEventListener("click", usePasswordButton);
 buttons.resetBtn.addEventListener('click', useResetButton);
+buttons.copyBtn.addEventListener('click', useCopyButton);
 
 
 //*** Begin Password Generation ***/

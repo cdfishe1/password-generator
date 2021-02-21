@@ -76,22 +76,7 @@ footer::after {
   clear: both;
 }
 
-/* Generate button styling */
-.generate-btn {
-  border: none;
-  background-color: hsl(360, 91%, 36%);
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
-  display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
-  margin: 16px 16px 16px 20px;
-  padding: 14px 34px;
-  text-align: center;
-  cursor: pointer;
-}
+
 
 button[disabled] {
   cursor: default;
@@ -109,12 +94,42 @@ button[disabled] {
   align-items: center;
 }
 
+/* Generate button styling */
+.generate-btn {
+  border: none;
+  background-color: hsl(360, 91%, 36%);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+    0px;
+  color: hsl(0, 0%, 100%);
+  display: inline-block;
+  font-size: 22px;
+  line-height: 22px;
+  margin: 16px 16px 16px 20px;
+  padding: 14px 34px;
+  text-align: center;
+  cursor: pointer;
+}
+
 .reset-btn {
   display: none;
   border: none;
   background-color: #00FF00;
   border-radius: 25px;
   color: hsl(360, 91%, 36%);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1.25vh 1.25vw;
+  margin-bottom: 1.5vh;
+  cursor: pointer;
+}
+
+.copy-btn {
+  display: none;
+  border: none;
+  background-color: blue;
+  border-radius: 25px;
+  color: white;
   font-size: 1rem;
   font-weight: bold;
   padding: 1.25vh 1.25vw;
