@@ -39,6 +39,7 @@ Site deployed at [Charles Fisher](https://cdfishe1.github.io/password-generator/
 * Refactored html and css to reflect semantic elements.
 * Enlarged size of button on small screens for ease of use.
 * Added reset button so that generator can be reused without need of window refresh.
+* Added copy password button to copy the desired password to the clipboard.
 
 
 ## Installation
