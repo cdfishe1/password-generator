@@ -17,16 +17,11 @@ Displays a randomized password based on user inputed criteria and password lengt
 * [Credits](#credits)
 * [License](#license)
 
-## Password Generator Screenshot
+## Password Generator Screencast
 
-### Screenshot on page load
-![Screenshot of page load](assets/images/initial-screenshot.jpg)
+### Screencast on mobile
+![Screencast on mobile](assets/images/mobile.gif)
 
-### Screenshot of user selection of criteria
-![Screenshot of user selection](assets/images/selection-screenshot.jpg)
-
-### Screenshot of generated password
-![Screenshot of generated password](assets/images/generated-screenshot.jpg)
 
 ## Deployment
 
